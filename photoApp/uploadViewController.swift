@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseStorage
 
 class uploadViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
@@ -41,6 +45,66 @@ class uploadViewController: UIViewController , UIImagePickerControllerDelegate ,
     
     
 
+    @IBAction func shareButton(_ sender: Any) {
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let storageMedia = storageRef.child("Media")
+        
+        if let data = peekPhoto.image?.jpegData(compressionQuality: 0.5){
+            let id = UUID().uuidString
+            let photoRef = storageMedia.child("\(id).jpeg")
+            
+            photoRef.putData(data, metadata: nil) { (stroged,eror) in
+                if eror != nil{
+                    self.errorMessage(title: "Eror", subTitle: eror?.localizedDescription ?? "Eror have not descp")
+                }else{
+                    
+                    photoRef.downloadURL { (url, eror) in
+                        if eror == nil{
+                            let imageurl = url?.absoluteString
+                            
+                            if let imageurl = imageurl{
+                                
+                                let firestore = Firestore.firestore()
+                                
+                                let addData = ["url":imageurl,"descp":self.descpTextField.text!,"email":Auth.auth().currentUser?.email,"tarih":FieldValue.serverTimestamp()] as [String:Any]
+                                
+                                firestore.collection("Post").addDocument(data: addData) { eror in
+                                    if eror != nil{
+                                        self.errorMessage(title: "Eror", subTitle: eror?.localizedDescription ?? "Eror have noor descp")
+                                    }else{
+                                        print("yes")
+                                    }
+                                }
+                                    
+                                
+                                
+                            }
+                            
+                            
+                        }else{
+                            self.errorMessage(title: "Eror", subTitle: eror?.localizedDescription ?? "Eror have not descp")
+                        }
+                            
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    func errorMessage(title:String,subTitle:String){
+        let alert = UIAlertController(title: title, message: subTitle, preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Okey", style: UIAlertAction.Style.default)
+        alert.addAction(action)
+        present(alert, animated: true)
+ 
+        
+    }
     
 
 }

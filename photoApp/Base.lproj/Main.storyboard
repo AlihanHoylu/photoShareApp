@@ -142,6 +142,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Share"/>
+                                <connections>
+                                    <action selector="shareButton:" destination="O3M-oW-Z9R" eventType="touchUpInside" id="AId-ID-QCp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AKV-Hf-PZ0"/>
