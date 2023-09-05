@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>482502520440-4eukv8eqe9qekgh3ffvgst3c6ijehm2r.apps.googleusercontent.com</string>
+	<string>609218602534-p7ptsduo5h23gb7td5ueb0uqj8nqudi4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.482502520440-4eukv8eqe9qekgh3ffvgst3c6ijehm2r</string>
+	<string>com.googleusercontent.apps.609218602534-p7ptsduo5h23gb7td5ueb0uqj8nqudi4</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC--Q-o-BIXTKILK8VHtrTJOKYR2LlomHs</string>
+	<string>AIzaSyA31eZvGqh8xQnzbbDPDhyUWEzKgZGNhdc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>482502520440</string>
+	<string>609218602534</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.alihanhoylu.photoApp</string>
 	<key>PROJECT_ID</key>
-	<string>learnfirebase-ef089</string>
+	<string>photoapp-ac8c0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>learnfirebase-ef089.appspot.com</string>
+	<string>photoapp-ac8c0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:482502520440:ios:5314536d4eb8286ca4878d</string>
+	<string>1:609218602534:ios:952c069d0b58c9e72828e7</string>
 </dict>
 </plist>
