@@ -126,10 +126,33 @@
                     <view key="view" contentMode="scaleToFill" id="VKU-jo-gA0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ekran Resmi 2023-09-05 18.49.07" translatesAutoresizingMaskIntoConstraints="NO" id="Qwu-kw-gXv">
+                                <rect key="frame" x="25" y="93" width="343" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6z-bI-xQR">
+                                <rect key="frame" x="25" y="315" width="251" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgd-OK-Sby">
+                                <rect key="frame" x="279" y="315" width="89" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Share"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AKV-Hf-PZ0"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="square.and.arrow.up" catalog="system" id="PYE-Ep-8LE"/>
+                    <connections>
+                        <outlet property="descpTextField" destination="T6z-bI-xQR" id="wg9-qt-fMJ"/>
+                        <outlet property="peekPhoto" destination="Qwu-kw-gXv" id="ago-K4-4Qy"/>
+                        <outlet property="shareButton" destination="zgd-OK-Sby" id="8Uf-un-5tP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwD-M1-1ca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,6 +196,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Ekran Resmi 2023-09-05 18.49.07" width="524" height="272"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="link" catalog="system" width="128" height="124"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

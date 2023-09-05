@@ -7,23 +7,40 @@
 
 import UIKit
 
-class uploadViewController: UIViewController {
+class uploadViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
+    
+    @IBOutlet weak var peekPhoto: UIImageView!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var descpTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        shareButton.isEnabled = false
 
-        // Do any additional setup after loading the view.
+        peekPhoto.isUserInteractionEnabled = true
+        let gestru = UITapGestureRecognizer(target: self, action: #selector(gestruge))
+        peekPhoto.addGestureRecognizer(gestru)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func gestruge(){
+        
+        let viewAlbume = UIImagePickerController()
+        viewAlbume.delegate = self
+        viewAlbume.sourceType = .photoLibrary
+        present(viewAlbume, animated: true)
+        
     }
-    */
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        peekPhoto.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        dismiss(animated: true)
+        shareButton.isEnabled = true
+    }
+    
+    
+
+    
 
 }
