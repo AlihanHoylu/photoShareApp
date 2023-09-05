@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func signUpButton(_ sender: Any) {
+        performSegue(withIdentifier: "toFeed", sender: nil)
+    }
+    
 }
 
