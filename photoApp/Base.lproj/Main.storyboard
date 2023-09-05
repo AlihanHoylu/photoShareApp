@@ -55,7 +55,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign in"/>
                                 <connections>
-                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PUe-qj-sch"/>
+                                    <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UyF-Mt-gFb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-Mz-yc4">
@@ -63,6 +63,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign up"/>
+                                <connections>
+                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mTb-s3-2ij"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -70,6 +73,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2FG-PK-FJg"/>
                     <connections>
+                        <outlet property="emailTextField" destination="2gE-eO-qqe" id="hzX-Q0-qK4"/>
+                        <outlet property="passwordTextField" destination="RTa-7p-ATU" id="Xg1-RV-Zp3"/>
                         <segue destination="Ojb-lz-32H" kind="presentation" identifier="toFeed" modalPresentationStyle="fullScreen" id="kAL-ad-Ksn"/>
                     </connections>
                 </viewController>
@@ -149,7 +154,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="sBU-yi-nDR">
             <objects>
-                <tabBarController id="Ojb-lz-32H" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="Ojb-lz-32H" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2Ba-Lv-vUi"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PfL-xZ-tnu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
