@@ -46,6 +46,7 @@ class uploadViewController: UIViewController , UIImagePickerControllerDelegate ,
     
 
     @IBAction func shareButton(_ sender: Any) {
+        self.shareButton.isEnabled = false
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let storageMedia = storageRef.child("Media")
@@ -73,7 +74,10 @@ class uploadViewController: UIViewController , UIImagePickerControllerDelegate ,
                                     if eror != nil{
                                         self.errorMessage(title: "Eror", subTitle: eror?.localizedDescription ?? "Eror have noor descp")
                                     }else{
-                                        print("yes")
+                                        self.peekPhoto.image = UIImage(named: "Ekran Resmi 2023-09-05 18.49.07")
+                                        self.descpTextField.text = ""
+                                        self.shareButton.isEnabled = false
+                                        self.tabBarController?.selectedIndex = 0
                                     }
                                 }
                                     
@@ -102,6 +106,7 @@ class uploadViewController: UIViewController , UIImagePickerControllerDelegate ,
         let action = UIAlertAction(title: "Okey", style: UIAlertAction.Style.default)
         alert.addAction(action)
         present(alert, animated: true)
+        self.shareButton.isEnabled = true
  
         
     }

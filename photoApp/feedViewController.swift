@@ -7,23 +7,29 @@
 
 import UIKit
 
-class feedViewController: UIViewController {
+class feedViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var feedTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        feedTableView.dataSource = self
+        feedTableView.delegate = self
+       
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = feedTableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! feedCell
+        cell.descpTextLabel.text = "yorum"
+        cell.emailTextLabel.text = "alihan"
+        cell.feedImage.image = UIImage(named: "Ekran Resmi 2023-09-05 18.49.07")
+        return cell
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
 
 }
