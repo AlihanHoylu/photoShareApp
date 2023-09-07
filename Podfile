@@ -8,6 +8,8 @@ target 'photoApp' do
 pod 'FirebaseAuth'
 pod 'FirebaseStorage'
 pod 'FirebaseFirestore'
+pod 'SDWebImage', '~> 5.0'
+
 
   # Pods for photoApp
 

@@ -15,6 +15,7 @@
 		4015EC0D2AA7190D005DDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4015EC0C2AA7190D005DDFF6 /* Assets.xcassets */; };
 		4015EC102AA7190D005DDFF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4015EC0E2AA7190D005DDFF6 /* LaunchScreen.storyboard */; };
 		4015EC182AA71A65005DDFF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4015EC172AA71A65005DDFF6 /* GoogleService-Info.plist */; };
+		4052E51E2AA9FDE7002C5C66 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4052E51D2AA9FDE7002C5C66 /* Post.swift */; };
 		409861E62AA748B5004B70AB /* feedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409861E52AA748B5004B70AB /* feedViewController.swift */; };
 		409861E82AA748D2004B70AB /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409861E72AA748D2004B70AB /* settingsViewController.swift */; };
 		409861EA2AA748E9004B70AB /* uploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409861E92AA748E9004B70AB /* uploadViewController.swift */; };
@@ -33,6 +34,7 @@
 		4015EC0F2AA7190D005DDFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4015EC112AA7190D005DDFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4015EC172AA71A65005DDFF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4052E51D2AA9FDE7002C5C66 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		409861E52AA748B5004B70AB /* feedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedViewController.swift; sourceTree = "<group>"; };
 		409861E72AA748D2004B70AB /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		409861E92AA748E9004B70AB /* uploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				409861E72AA748D2004B70AB /* settingsViewController.swift */,
 				409861E92AA748E9004B70AB /* uploadViewController.swift */,
 				40AC2C962AA8D2A00012AD18 /* feedCell.swift */,
+				4052E51D2AA9FDE7002C5C66 /* Post.swift */,
 			);
 			path = photoApp;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				4015EC052AA7190D005DDFF6 /* ViewController.swift in Sources */,
 				4015EC012AA7190D005DDFF6 /* AppDelegate.swift in Sources */,
 				40AC2C972AA8D2A00012AD18 /* feedCell.swift in Sources */,
+				4052E51E2AA9FDE7002C5C66 /* Post.swift in Sources */,
 				4015EC032AA7190D005DDFF6 /* SceneDelegate.swift in Sources */,
 				409861E82AA748D2004B70AB /* settingsViewController.swift in Sources */,
 			);

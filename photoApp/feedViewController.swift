@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
+import SDWebImage
 
 class feedViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
@@ -17,12 +18,15 @@ class feedViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     var descp = [String]()
     var photourl = [String]()
     
+    var post = [Post]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         feedTableView.dataSource = self
         feedTableView.delegate = self
+        
        
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -32,21 +36,21 @@ class feedViewController: UIViewController, UITableViewDelegate,UITableViewDataS
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = feedTableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! feedCell
-        cell.descpTextLabel.text = descp[indexPath.row]
-        cell.emailTextLabel.text = useremail[indexPath.row]
-        cell.feedImage.image = UIImage(named: "Ekran Resmi 2023-09-05 18.49.07")
+        cell.descpTextLabel.text = post[indexPath.row].descp
+        cell.emailTextLabel.text = post[indexPath.row].email
+        cell.feedImage.sd_setImage(with: URL(string: post[indexPath.row].url))
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return useremail.count
+        return post.count
     }
     
     func getData(){
         
         let firestore = Firestore.firestore()
         
-        firestore.collection("Post").addSnapshotListener { (snapshot, eror) in
+        firestore.collection("Post").order(by: "tarih", descending: true).addSnapshotListener { (snapshot, eror) in
             
             if eror != nil{
                 print("eror")
@@ -54,25 +58,25 @@ class feedViewController: UIViewController, UITableViewDelegate,UITableViewDataS
                 
                 if snapshot?.isEmpty != true && snapshot != nil{
                     
+                    self.post.removeAll()
+                    
                     for document in snapshot!.documents {
                         
+                                                
                         let id = document.documentID
                         print(id)
                         
                         if let name = document.get("email") as? String{
-                            self.useremail.append(name)
-                            print(name)
+                            if let descptrip = document.get("descp") as? String{
+                                if let url = document.get("url") as? String{
+                                    
+                                    let newpos = Post(email: name, descp: descptrip, url: url)
+                                    
+                                    self.post.append(newpos)
+                                    
+                                }
+                            }
                         }
-                        
-                        if let descptrip = document.get("descp") as? String{
-                            self.descp.append(descptrip)
-                        }
-                        
-                        if let url = document.get("url") as? String{
-                            self.photourl.append(url)
-                        }
-                        
-                        
                     }
                     
                 }
